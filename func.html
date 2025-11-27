@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu Nacional</title>
+    <link rel="stylesheet" href="geral.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            color: #1d3c37;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Questrial", sans-serif;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 50%;
+        }
+
+        #lista {
+            margin: 10px auto 40px;
+            width: 100%;
+            height: 400px;
+            border: #f7e5c2 2px solid;
+            border-radius: 10px;
+        }
+
+        h2.lista-title {
+            font-family: "Questrial", sans-serif;
+            font-weight: normal;
+            padding: 10px;
+            background-color: #debe82;
+            border-radius: 7px 7px 0 0;
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #1d3c37;
+            font-family: sans-serif;
+            font-size: 25px;
+        }
+
+        h4 {
+            color: #1d3c37;
+            font-family: sans-serif;
+            font-size: 20px;
+            font-weight: normal;
+            margin-top: -20px;
+        }
+
+        button#registrar {
+            background-color: #1d3c37;
+            color: #b49a68;
+            width: 250px;
+            padding: 10px;
+            height: 50px;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: 0px 7px 9px 0px rgba(0, 0, 0, 0.292);
+            cursor: pointer;
+            border: none;
+        }
+
+        button#registrar:hover {
+            background-color: #14504a;
+            transition: 0.3s;
+        }
+
+        button#sair {
+            background-color: #e9e6e6;
+            color: #7f7f7f;
+            width: 100px;
+            padding: 10px;
+            height: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+        }
+
+        button#sair:hover {
+            background-color: #cfcfcf;
+            color: #5a5a5a;
+            transition: 0.3s;
+        }
+
+        form {
+            padding: 30px 30px 15px 30px;
+            border-radius: 20px;
+            position: relative;
+            border: #577570 2px solid;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            width: 45%;
+            margin: 60px auto;
+            display: none;
+        }
+
+        #btn-confirmar {
+            align-self: flex-end;
+            background-color: #577570;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #1d3c37;
+            font-size: 18px;
+            border: none;
+            height: 35px;
+            width: 110px;
+            cursor: pointer;
+        }
+
+        #btn-confirmar:hover {
+            background-color: #3e605f;
+            color: #0f1f1c;
+            transition: 0.3s;
+        }
+
+        #btn-fechar {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #1d3c37;
+        }
+
+        label {
+            font-family: "Questrial", sans-serif;
+            font-size: 18px;
+            margin-right: 5px;
+        }
+
+        input {
+            background-color: #e9e6e6;
+            border: none;
+            border-radius: 5px;
+            height: 30px;
+            padding: 0 5px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header-logo">
+            <img src="imgs/logo.png" alt="Logo do Museu Nacional" id="logo">
+        </div>
+        <div id="header-title">
+            <h1>MUSEU NACIONAL</h1>
+            <h2 id="subtitle">Arte ao alcance de todos</h2>
+        </div>
+    </header>
+    <main>
+        <h3>Funcionário,</h3>
+        <h4>Fulano de Tal</h4>
+
+        <div id="lista">
+            <h2 class="lista-title">Obras Registradas</h2>
+        </div>
+
+        <button id="registrar">Registrar Obra</button>
+        <button id="sair">Sair</button>
+
+        <form action="#">
+            <i class="fa-solid fa-xmark" id="btn-fechar"></i>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome"> <br required>
+            </div>
+
+            <div>
+                <label for="ano-criacao">Ano de criação:</label>
+                <input type="date" name="ano-criacao" id="ano-criacao">  <br>
+            </div>
+
+            <div>
+                <label for="valor">Valor estimado:</label>
+                <input type="number" name="valor" id="valor">
+                <br>
+            </div>
+
+            <div>
+                <label for="id-autor">ID do autor(a):</label>
+                <input type="number" name="id-autor" id="id-autor" required>
+                <br>
+            </div>
+
+            <button type="submit" id="btn-confirmar">Confirmar</button>
+        </form>
+    </main>
+    <footer>
+        <p id="p-footer">© Museu Nacional</p>
+    </footer>
+
+    <script>
+        const btnRegistrar = document.getElementById("registrar");
+        const form = document.querySelector("form");
+        const btnFechar = document.getElementById("btn-fechar");
+        const btnSair = document.getElementById("sair");
+
+        btnRegistrar.addEventListener("click", () => {
+            form.style.display = "flex";
+        });
+
+        btnFechar.addEventListener("click", () => {
+            form.style.display = "none";
+        });
+
+        btnSair.addEventListener("click", () => {
+            window.location.href = "index.html";
+        });
+    </script>
+
+    <script src="https://kit.fontawesome.com/f9c90ebe75.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

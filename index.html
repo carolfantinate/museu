@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu Nacional</title>
+    <link rel="stylesheet" href="geral.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            color: #1d3c37;
+            font-size: 18px;
+            text-align: center;
+            font-family: "Questrial", sans-serif;
+        }
+
+        #div-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 60px 0 100px 0;
+        }
+
+        button {
+            background-color: #1d3c37;
+            color: #b49a68;
+            width: 180px;
+            height: 70px;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 17px;
+            box-shadow: 0px 7px 9px 0px rgba(0, 0, 0, 0.292);
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #14504a;
+            transition: 0.3s;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header-logo">
+            <img src="imgs/logo.png" alt="Logo do Museu Nacional" id="logo">
+        </div>
+        <div id="header-title">
+            <h1>MUSEU NACIONAL</h1>
+            <h2 id="subtitle">Arte ao alcance de todos</h2>
+        </div>
+    </header>
+    <main>
+        <p>Selecione uma opção.</p>
+        <div id="div-buttons">
+            <button> ADMINISTRADOR</button>
+            <button> FUNCIONÁRIO</button>
+        </div>
+        <p>Interface de acesso ao sistema.</p>
+        <p>administrador | funcionário</p>
+        <br>
+        <p>em caso de problemas entrar em contato com a equipe de TI.</p>
+    </main>
+    <footer>
+        <p id="p-footer">© Museu Nacional</p>
+    </footer>
+
+    <script>
+        const buttons = document.querySelectorAll("button");
+
+        buttons[0].addEventListener("click", () => {
+            window.location.href = "login-adm.html";
+        });
+
+        buttons[1].addEventListener("click", () => {
+            window.location.href = "login-func.html";
+        });
+    </script>
+</body>
+
+</html>

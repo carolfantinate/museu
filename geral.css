@@ -1,0 +1,53 @@
+ @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+
+
+ #header-logo {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 20px;
+ }
+
+ #header-title {
+     width: 100%;
+     display: flex;
+     text-align: center;
+     justify-content: center;
+     flex-direction: column;
+     height: 400px;
+     background-image: url('imgs/img-museu.png');
+     background-size: cover;
+     background-position: center;
+     margin-bottom: 70px;
+ }
+
+ #logo {
+     width: 60px;
+     height: auto;
+ }
+
+ h1 {
+     font-size: 70px;
+     color: #debe82;
+     margin: 0;
+ }
+
+ #subtitle {
+     font-size: 30px;
+     margin: 0;
+     margin-top: 5px;
+     color: #debe82;
+ }
+
+ footer {
+     background-color: #1d3c37;
+     color: #fff;
+     text-align: center;
+     padding: 4px 0;
+     margin-top: 80px;
+ }
+
+ #p-footer {
+     color: #b49a68;
+ }
