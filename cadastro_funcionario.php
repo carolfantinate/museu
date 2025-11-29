@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data_nasc = $_POST["data_nasc"];
     $data_adms = $_POST["data_adms"];
 
-    // Preparar a query
+    // criar a query
     $sql = "INSERT INTO funcionario (nome, cpf, data_nasc, data_adms)
             VALUES (?, ?, ?, ?)";
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssss", $nome, $cpf, $data_nasc, $data_adms);
 
     if ($stmt->execute()) {
-        // Volta para admin.php com alerta de sucesso
+        // volta para tela de adm com alerta de sucesso
         echo "<script>
                 alert('Funcionário cadastrado com sucesso!');
                 window.location.href = 'admin.php';

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -49,8 +52,8 @@
             border-radius: 5px;
             border: none;
             background-color: #d9d9d9;
-            color: #b4b4b4;
-            font-size: 24px;
+            color: #1d3c37;
+            font-size: 20px;
             padding: 5px;
         }
 
@@ -58,7 +61,7 @@
             outline: none;
         }
 
-        input:hover{
+        input:hover {
             border: #b4b4b4 2px solid;
         }
 
@@ -92,11 +95,12 @@
             <h2 id="subtitle">Arte ao alcance de todos</h2>
         </div>
     </header>
+
     <main>
         <h3>Login Funcionário</h3>
-        <p>Insira as informações necessárias.</p>
+        <p>Insira o CPF cadastrado no sistema.</p>
 
-        <form action="func.html">
+        <form action="verificar_login.php" method="post">
             <div>
                 <label for="cpf">CPF:</label>
                 <input type="number" name="cpf" id="cpf" required>
@@ -105,6 +109,7 @@
             <button type="submit">Entrar</button>
         </form>
     </main>
+
     <footer>
         <p id="p-footer">© Museu Nacional</p>
     </footer>
